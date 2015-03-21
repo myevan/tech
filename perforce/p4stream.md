@@ -1,11 +1,9 @@
-﻿Perforce Stream
+Perforce Stream
 ===============
 
 퍼포스 스트림이란 다른 버전 관리 시스템의 **브랜치**를 말합니다.
-퍼포스는 브랜치란 용어를 비슷하지만 약간 다른(?) 개념으로 이미 사용하고 있었기 때문에
-대신 새로운 **스트림**이라는 용어를 사용하고 있습니다.
-
-대개는 사용자 입장인 경우가 많으므로 사용 방법 먼저 다룬 다음 관리 방법을 다루도록 하겠습니다.
+퍼포스는 브랜치란 용어를 이미 약간 다른(?) 개념으로 사용하고 있었기 때문에
+대신 **스트림**이라는 용어를 도입해 사용하고 있습니다.
 
 
 P4V 사용 방법
@@ -41,6 +39,8 @@ P4V 사용 방법
 
 다행히 현재 워크스페이스에서 스트림 전환 및 자동 갱신 옵션이 있어 git 처럼 편리하게 스트림 변경을 할 수 있습니다.
 
+![P4V Preference Streams](./images/p4v_preferences_streams.png =400x)
+
 * 메인 메뉴 Edit > Preferences 메뉴 선택
 * 스트림들 (Streams) 패널 선택
 * 스트림 워크스페이스들 (Stream Workspaces) 섹션 
@@ -54,6 +54,8 @@ P4V 사용 방법
 스트림 디팟에 접근이 가능하면 워크스페이스 다이얼로그의 스트림 항목이 활성화됩니다. 
 스트림 선택시 기존 워크스페이스 맵핑이 사라지므로 스트림 연결하기전에 진행 중인 작업은 모두 서밋되었는지 확인이 필요합니다.
 
+![P4V WorkspaceView Stream](./images/p4v_workspace_view_stream.png =400x)
+
 * 메인 메뉴 View > Workspaces 메뉴 선택
 * 워크스페이스들(Workspaces) 뷰 현재 워크 스페이스 선택
 * 스트림 브라우즈(Stream Browse) 버튼: main 스트림 선택
@@ -64,6 +66,8 @@ P4V 사용 방법
 현재 구성된 스트림간 전환이 가능합니다. 
 펜딩(Pending) 정보에 연관된 스트림이 표시되지 않으므로, 전환전에 서밋 여부를 확인하는게 좋습니다.
 
+![P4V StreamView Switch](./images/p4v_stream_view_graph_switch.png =200x)
+
 * 스트림 리스트 (Streams) 뷰 그래프 패널에서 대상 스트림 더블 클릭 
 * 이 스트림에서 작업(Work is this Stream) 클릭 or 모니터 아이콘 드래그
 
@@ -72,6 +76,8 @@ P4V 사용 방법
 
 부모 스트림에 반영은 디폴트로 **복사**만 가능하기 때문에 반영전에 부모 스트림 변경 사항을 가져와야 합니다.
 복사 특성상 자식 스트림에 수정한 내역이 통합되어 전달됩니다.
+
+![P4V StreamView Graph CopyToParent](./images/p4v_stream_view_graph_copy_to_parent.png =200x)
 
 * 스트림 리스트 (Streams) 뷰 그래프 패널에서 부모 스트림 우클릭
 * 부모 스트림으로 복사(Copy to '부모 스트림 이름') 메뉴 선택 
@@ -86,10 +92,13 @@ P4V 사용 방법
 
 부모 변경 사항을 가져오지 않고 반영시 경고가 표시되며, 자식에도 수정사항이 있을 경우 빨간색 선으로 표시됩니다. 
 
+![P4V StreamView Graph Collision](./images/p4v_stream_view_graph_collision.png =200x)
 
 #### 부모 스트림 수정 사항 자식 스트림 반영
 
 자식 스트림에 반영은 디폴트로 **머지**만 가능합니다. 머지 특성상 부모 스트림에 수정한 내역이 그대로 전달됩니다.
+
+![P4V StreamView Graph MergeToChild](./images/p4v_stream_view_graph_merge_to_child.png =200x)
 
 * 스트림 리스트 (Streams) 뷰 그래프 패널에서 자식 스트림 우클릭
 * 자식 스트림으로 머지/통합(Merge/Integrate to '자식 스트림 이름') 메뉴 선택 
