@@ -1,6 +1,7 @@
 시작하기 (Gettting Started)
 =================
-2015-04-03 12:04
+http://ko.esotericsoftware.com/spine-getting-started>
+
 
 
 설치 (Installation)
