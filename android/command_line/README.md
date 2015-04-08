@@ -48,7 +48,7 @@ Homebrew wget 설치
     export NDK_HOME="$HOME/AndroidEnvironments/android-ndk-r10d"
     export ANT_HOME="$HOME/AndroidEnvironments/apache-ant-1.9.4"
 
-    export PATH=$PATH:$ANDROID_HOME/tools:$ANT_HOME/bin:$NDK_HOME
+    export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANT_HOME/bin:$NDK_HOME
 
 
 POSIX 작업
