@@ -2,9 +2,9 @@
 ==================
 <http://ko.esotericsoftware.com/spine-user-guide>
 
-* <a href="./user_guide/10_get_started/">시작하기(Getting Started)</a>
+* <a href="./10_get_started/">시작하기(Getting Started)</a>
 * 기본 컨셉
-	* <a href="./user_guide/21_images/">이미지(Images)</a>
+	* <a href="./21_images/">이미지(Images)</a>
 	* 툴(Tools)
 	* 키 프레임(Key Frames)
 	* 애니메이팅(Animating)
@@ -12,7 +12,7 @@
 	* 리전(Regions)
 	* 메쉬(Meshes)
 	* 바운딩 박스(Bounding Boxes)
-* <a href="./user_guide/40_skins/">스킨(Skins)</a>
+* <a href="./40_skins/">스킨(Skins)</a>
 * 이벤트(Events)
 * IK 제약(IK Constraints)
 * 뷰(Views)
