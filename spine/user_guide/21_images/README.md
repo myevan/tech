@@ -1,5 +1,5 @@
 이미지 (Images)
-======================
+===============
 <http://ko.esotericsoftware.com/spine-images>
 
 * 스켈레톤: 본 연결 이미지 조합 	
