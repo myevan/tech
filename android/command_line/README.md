@@ -59,9 +59,13 @@ POSIX 작업
     $ echo "y" | android update sdk -a -u --filter android-15,platform-tools,build-tools-22.0.1,sys-img-armeabi-v7a-android-15
 
 
-#### 안드로이드 가상 장치 생성
+#### 안드로이드 에뮬레이터
 
     $ android avd
+
+    $ emulator -list-avds
+
+    $ emulator -avd=$AVD_NAME
 
 
 #### 프로젝트 생성
