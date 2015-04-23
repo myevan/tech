@@ -1,0 +1,155 @@
+Tools
+
+Tools in Spine are found in the Transform and Tools sections of editor area toolbar.
+
+
+
+Right clicking anyway in the editor area will toggle between the current tool and the last selected tool. This makes using multiple tools more efficient because it is much faster than clicking the toolbar buttons.
+
+Selection
+
+Instead of a dedicated selection tool, Spine uses a smart selection system. Selecting an item in the editor area is done by simply clicking the item to select. To select multiple items, hold ctrl (cmd on Mac) and click each item. To box select, hold ctrl (cmd on Mac) and drag. When nothing is selected, box selection can be done by without holding a button.
+
+Clearing the selection is unnecessary most of the time but can be done by pressing escape, spacebar, or by double clicking in the editor area. This can be useful just before using box selection.
+
+Selection groups
+Selections can be stored by pressing ctrl+1 (cmd+1 on Mac), where 1 can be any of the number keys, 0-9. The selection can later be recalled by pressing the number key without holding ctrl or cmd. Selection groups can greatly speed up posing a skeleton. For example, for a humanoid skeleton selection groups can be stored for the torso, head, arms and legs.
+
+Transform tools
+
+The Rotate, Translate, and Scale tools each work in the same way. The selected item is adjusted by dragging the mouse. The drag should start in empty space or on the item itself. If the drag starts on a different item, that item will be selected and adjusted. This makes makes adjusting items quick and precise, without requiring tedious interaction with small control handles.
+
+Multiple items can be selected by clicking while holding ctrl (cmd on Mac). Box selection is done by holding ctrl (cmd on Mac) and then dragging.
+
+Numeric entry
+Each transform tool has a numeric display whose values depend on the selected axes. New values can be typed and will take effect when enter or tab is pressed.
+
+
+
+The mouse can also be used to change the value by scrolling the mouse wheel while over the number or by dragging up or down. Hold shift while using the mouse wheel or dragging to adjust the value in smaller increments.
+
+The arrow keys can be used to change the value for the selected transform tool. Hold shift while using the arrow keys to adjust the value in smaller increments.
+
+Axes
+The Local, Parent, and World axes determine the numeric values shown for the rotation and translation, as well as the direction of the axes shown in the editor area. This gives more control over how items are transformed.
+
+
+
+How the active axes affects each transform tool is explained below.
+
+Transform copy
+Bone transforms can be copied by selecting one or more bones and pressing ctrl+C (cmd+C on Mac). The transform can later be applied by selecting one or more bones and pressing ctrl+V (cmd+V on Mac). This sets the scale, rotation, and translation to the copied values. The hierarchy of the bones is used when applying the copied transforms.
+
+Copying bone transforms can be useful to make one limb match another, or for copying all or part of a pose from one animation frame to another.
+
+Rotate tool
+The pivot point for rotating a bone is always the bone's origin. shift can be held while dragging to constrain rotation to 15 degree increments.
+
+Rotation in Spine is always normalized between 0 and 360 degrees. See keying rotation for rotating more than 180 degrees in an animation.
+
+Axes:
+
+Local or Parent: The value is the counterclockwise rotation relative to the item's parent, where 0 is pointing the same direction as the parent's X axis.
+World: The value is the counterclockwise world rotation, where 0 is to the right, 90 is up, 180 is left, and 270 is down.
+Translate tool
+The X or Y handles on the Translate tool icon in the editor area can be dragged to restrict translation to a single axis.
+
+Axes:
+
+Local: The value is the distance to the item's parent using the item's local axes. The X axis points in the direction of the item's rotation.
+Parent: The value is also the distance to the item's parent, but using the parent's local axes. The X axis points in the direction of the parent's rotation.
+World: The value is the distance to the world origin.
+Translating multiple bones by Local or Parent axes can be useful to move the bones in different directions the same amount. For example, to make both arms longer.
+
+
+
+Here the lower arms have been translated along the parent's X axis by choosing Parent axes and then dragging the red X axis arrow on Translate tool icon.
+
+Scale tool
+The X or Y handles on the Scale tool icon in the editor area can be dragged to restrict scaling to a single axis.
+
+Scale is always applied using the item's local axes. This means the X axis for scaling always points in the direction of the item's rotation. This is true even for scale inherited from parent bones, which differs from traditional transforms and can be surprising for new Spine users.
+
+
+
+Here spineboy's back thigh has been scaled on the X axis which elongates the thigh, shin, and foot. The shin and foot are scaled on their local X axis. If this does not produce the desired effect, scale inheritance can be disabled on the shin so it is unaffected by the thigh's scale.
+
+This approach to scaling was chosen because it means scaling will never result in skew. In the future, Spine may provide the option to use traditional scaling for when skew is desired.
+
+Due to how Spine's scaling works, a scale of -1 may not cause the skeleton to face in the opposite direction. Instead, a bone can be flipped in the properties at the bottom of the tree.
+
+
+
+Axes:
+
+Scale always uses the item's local axes. The X axis points in the direction of the item's rotation.
+Bone length tool
+In setup mode and when any transform tool is active, placing the mouse over the tip of a selected bone allows the bone's length to be adjusted. Multiple bones can be adjusted at the same time. The bone length can also be adjusted numerically in the bone's properties at the bottom of the tree view.
+
+
+
+Here the length of the sword bone is being adjusted.
+
+Pose tool
+
+The Pose tool adjusts bone rotation by using inverse kinematics (IK). A "target" icon appears at the tip of the selected bone and can be dragged to cause the bone to point to the target.
+
+The Pose tool excels at adjusting the rotation of multiple bones at the same time. Multiple bones can be selected in the usual way, by holding ctrl (cmd on Mac) or by using box select. Holding ctrl is not necessary to box select with the Pose tool. When multiple bones in the same bone hierarchy are selected, the Pose tool intuitively adjusts their rotation so the tip of the last bone is at the target.
+
+
+
+Here the tail is being adjusted by the Pose tool.
+
+Multiple sets of bones that do not have a common parent can be adjusted without losing the selection.
+
+
+
+Here both arms and legs are selected. Any selected bone can be dragged to adjust only that limb, without losing the selection of the bones that aren't being adjusted.
+
+Weights tool
+
+The Weights tool is used in combination with the weights view to set the influence of bones on the vertices in a mesh. See the Weights view for more information.
+
+Create Tool
+
+The Create tool creates new bones, which can only be done in setup mode. Before creating a new bone, first select the bone that will be the parent. Next, press the left mouse button where you want the bone to start, then drag to set the bone's length. Alternatively, you can click to create a zero length bone.
+
+The length of a bone is purely cosmetic, except when using IK constraints or auto weights. A zero length bone is drawn in the editor area using a crosshair icon instead of as a bone, but is otherwise exactly the same as any other bone.
+
+
+
+When choosing where to create bones, keep in mind that bones pivot around their origin when rotated. There are no limitations for where a bone is created. Child bones are not required to have their origin at the tip of the parent bone.
+
+Usually attachments for a new bone are already in the editor area as a reference for where to create the bone. After selecting the bone that will be the parent and before creating the new bone, hold ctrl (cmd on Mac) and click to select one or more attachments. When the new bone is created, the slots for these attachments are moved to the new bone and the new bone is named using the slot of the first attachment selected. This greatly reduces the time needed to setup a skeleton.
+
+To easily fix a bone that is not quite in the correct position, select the bone, then hold alt (option on Mac) and drag or click to recreate the bone. Any child bones or attachments will be unaffected.
+
+The color for each bone can be set in the properties at the bottom of the tree. This can help to differentiate groups of bones and make selection much easier. For example, for a humanoid skeleton the back leg and arm can be colored differently from the front leg and arm.
+
+
+
+Compensation
+
+Normally when a bone's transform is adjusted, any attachments and child bones are also affected. Compensation allows a bone to be adjusted without affecting the attachments or child bones. For example, this can be useful to move a bone to change where it rotates without moving attachments or child bones.
+
+
+
+To move a bone without affecting its attachments, first enable image compensation. This transforms the attachments an opposite amount so they appear to not have changed at all. This works for all attachments in setup mode, but in animate mode some attachments cannot be transformed. For example, image compensation will work in animate mode for mesh attachments but not region attachments.
+
+To move a bone without affecting child bones, first enable bone compensation. This transforms the child bones an opposite amount so they appear to not have changed at all. In animate mode, the changes bone compensation makes to each child bone must be keyed. Interpolation between keys may still cause the child bones to move.
+
+Be sure to disable compensation when it is no longer needed to avoid confusion.
+
+If a bone has nonuniform scaling (meaning the X scale is not the same as the Y scale) then, due to how attachment positions are described, image compensation may not be able to adjust attachments so they appear not to move.
+
+Options
+
+The options panel provides convenient access to disabling selection, visibility, and name tags for bones and attachments.
+
+
+
+The first column controls whether bones, region and mesh attachments, and bounding boxes can be selected. This can make some tasks easier by preventing accidental selection.
+
+The second column controls visibility of bones, region and mesh attachments, and bounding boxes. It is often useful to hide bones to reduce clutter while animating. When bones are hidden, they can still be selected and appear when under the mouse cursor.
+
+The third column controls visibility of name tags for bones, region and mesh attachments, and bounding boxes. Name tags increase the amount of clutter for complex skeletons, but can make it much easier to find a specific bone or attachment.

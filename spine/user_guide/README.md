@@ -5,7 +5,7 @@
 * <a href="./10_get_started/">시작하기(Getting Started)</a>
 * <a href="./20_basic_concepts/">기본 컨셉</a>
 	* <a href="./21_images/">이미지(Images)</a>
-	* 툴(Tools)
+	* <a href="./22_tools/">툴(Tools)</a>
 	* 키 프레임(Key Frames)
 	* 애니메이팅(Animating)
 * 어태치먼트(Attachments)
