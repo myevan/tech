@@ -13,6 +13,6 @@
 
 * P4Admin 실행
 * 그룹 생성
-	* Duration before password expires: unlimit 선택
+	* Duration before password expires: Unlimited 선택
 
 <p><img src="./images/p4admin_group_pref_password_expires.png"/></p>
