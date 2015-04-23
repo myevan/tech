@@ -3,7 +3,7 @@
 <http://ko.esotericsoftware.com/spine-user-guide>
 
 * <a href="./10_get_started/">시작하기(Getting Started)</a>
-* 기본 컨셉
+* <a href="./20_basic_concepts/">기본 컨셉</a>
 	* <a href="./21_images/">이미지(Images)</a>
 	* 툴(Tools)
 	* 키 프레임(Key Frames)
