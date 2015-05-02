@@ -31,29 +31,29 @@ OS X
 * Sublime Text 메인 메뉴 Project > Save Project As ... > 새로운 프로젝트 저장
 * Sublime Text 메인 메뉴 Project > Edit Project 클릭
 
-    {
-        "solution_file": "./유니티_솔류션.sln",
-        "folders":
-        [
+        {
+            "solution_file": "./유니티_솔류션.sln",
+            "folders":
+            [
+                {
+                    "name": "유니티_솔류션",
+                    "path": ".",
+                    "file_exclude_patterns":
+                    [
+                        "*.meta"
+                    ]
+                }
+            ],
+            "settings":
             {
-                "name": "유니티_솔류션",
-                "path": ".",
-                "file_exclude_patterns":
-                [
-                    "*.meta"
+                "auto_complete_triggers": [
+                    {
+                        "characters": ".", 
+                        "selector": "source.cs"
+                    }
                 ]
             }
-        ],
-        "settings":
-        {
-            "auto_complete_triggers": [
-                {
-                    "characters": ".", 
-                    "selector": "source.cs"
-                }
-            ]
         }
-    }
 
 
 FAQ
