@@ -1,5 +1,6 @@
 OmniSharpSublime + Unity
 ========================
+<https://github.com/OmniSharp/omnisharp-sublime/blob/master/README.md>
 
 OmniSharpSublime 은 **C#** 코드 관리를 위해 만들어진 **OS X** 용 **mono** 기반 Sublime Text **3** 플러그인입니다.
 
