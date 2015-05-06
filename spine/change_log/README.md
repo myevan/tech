@@ -8,8 +8,39 @@
 * 런타임 트렐로 <https://trello.com/board/spine-runtimes/5131f92a7d6864661c002455>
 
 
+3.0 릴리즈
+----------
+
+#### 3.0.00 (릴리즈 대기중)
+
+* **[NEW] 스큐 스케일** <http://ko.esotericsoftware.com/forum/Spine-s-non-skewing-transforms-3462>
+	* 플립 삭제 (네가티브 스케일 사용 추천)
+* **트랜스폼 제약** 추가
+	* 회전 상속, 스케일 상속 제거
+* 트리 뷰 본 제약 여부 표시
+* 스파인 외부 이미지 디렉토리 삭제 후 느려짐 버그 수정
+* 스파인 외부 이미지 디렉토리 삭제시 레이스 컨디션 크래쉬 수정
+* 이미지 갱신 속도 향상
+* OS X 높은 폴링 레이트일때 마우스 랙 수정
+* 저장하지 않는 변경사항 알림 다이얼로그 문구 수정
+
+		Your project has unsaved changes. 
+
+		[Discard changes] [Save changes] [Cancel]
+
+	* Discard: [D] or [N]
+	* Save: [S]
+	* Cancel: [C], [esc], [space], [enter]
+
+* libxrandr 이 존재하지 않을때 리눅스 에러 표시 개선
+* 아웃라인 뷰 백그라운드 컬러 수정
+* 텍스트 필드 글자 추가시 엔터 처리 수정
+* 현재 프레임 FFD 고스트 부정확한 표시 수정 
+   
+
+
 2.1 릴리즈
----------
+----------
 
 #### 2.1.27 (2015-04-02)
 
