@@ -1,0 +1,97 @@
+Key Frames
+
+Animating in Spine is done by using "key frames", which are also known as simply "keys". Keys define the start and end values of a transition. For any position between the keys, the value can be interpolated or "tweened". The art of animating a skeleton comes down to the poses defined by the keys and the positions of the keys on the timeline.
+
+Before keys can be set, be sure Spine is in animate mode and that the visibility dot set in the tree for the animation you will be editing.
+
+
+
+Timeline
+
+In animate mode, the skeleton's pose comes from the keys and the current timeline position. The timeline is found in the dopesheet view.
+
+
+
+Each second of time is represented on the timeline as 30 frames. Clicking a frame on the timeline will set a new timeline position. Once keys are set they will appear in the dopesheet below the timeline. See the dopesheet for more information on working with both the timeline and dopesheet.
+
+Setting keys
+
+When changes are made to a skeleton in animate mode, they are not automatically stored. If the timeline position is changed, the changes are lost. To keep the changes, they need to be stored as a key by clicking the appropriate key button in the toolbar or tree.
+
+The color of a key button is green if there is no key at the current frame, yellow if a change has been made but not yet keyed, and red if there is a key at the current frame.
+
+Transforms
+A key for rotation, translation, or scale is set by clicking the key button next to the numeric input for the respective tool in the toolbar.
+
+
+
+Additionally, when a bone's transform has any unkeyed changes a yellow key button appears next to the bone in the tree. Clicking this button creates a key only for the unkeyed changes.
+
+
+It is currently not possible to key X and Y separately for translation or scale, X and Y are always keyed together.
+
+Rotation
+When rotation is keyed, the direction the rotation takes is always the shortest path. To rotate more than 180 degrees, more than one key is needed. For example, to rotate 360 degrees, 3 keys are needed.
+
+
+Attachments
+To key which attachment is visible for a slot, first show or hide the desired attachment in the tree by clicking the visibility dot next to the attachment. This will cause the slot's key button to turn yellow and clicking the button will set a key.
+
+
+
+Slot color
+To tint an attachment in an animation, the color is set on the slot rather than on the attachment. The color is specified in the slot's properties at the bottom of the tree.
+
+
+
+Setting the alpha to 0 to make an attachment invisible is not an efficient way to hide the attachment. Most game toolkits will spend the same effort drawing an image with 0 alpha as they do drawing an image that can be seen. It is more efficient to hide an attachment by unchecking its visibility dot in the tree. See attachments for more information.
+
+Draw order
+The key button next to the Draw Order node in the tree will set a key for the current draw order. See draw order for more information.
+
+
+
+Events
+The key buttons for setting event keys are next to each event the tree. The event's properties can be changed before setting a key. See events for more information.
+
+
+
+Meshes
+To set a key for the vertex positions of a mesh, click the key button next to mesh in the tree. See meshes for more information.
+
+
+
+IK
+To set a key for an IK constraint's mix and bend direction, click the key button next to the IK constraint in the tree. Both the mix and bend direction are keyed together. See IK constraints for more information.
+
+
+
+Flip
+A bone's flip direction can be keyed in the bone's properties at the bottom of the tree. X and Y flip are keyed separately.
+
+
+
+Shortcuts
+Pressing K on the keyboard is the hotkey for Key Edited, which sets a key for all changes that are not yet keyed.
+
+When Auto Key is enabled in the dopesheet view, a key will be set automatically any time a change is made. See Auto key for more information.
+
+If a skeleton has been posed at the wrong timeline position and has not yet been keyed, the pose is lost when the timeline position is changed. To recover the pose at the new timeline position, invoke undo by pressing ctrl+Z (cmd+Z on Mac). However, if there is change to redo (ctrl+shift+Z, cmd+shift+Z on Mac) when the timeline position changed, then the pose cannot be recovered.
+
+Runtime differences
+
+If no key is set at all for a value, the animation won't change that value. In Spine the skeleton is always reset to the setup pose before an animation is applied. This means if no key is set then skeleton will have the value from the setup pose.
+
+At runtime, the programmer decides if the skeleton will be reset to the setup pose before applying an animation. If not, it means that if no key is set then the skeleton will keep whatever value was set last.
+
+For an example where this can be beneficial, an animation is used make a sword attachment visible for the weapon slot. The sword attachment will remain visible even when subsequent animations are played.
+
+For an example where this can be undesirable, an animation rotates the root bone and leaves it at 45 degrees. The next animation plays and doesn't key the root bone, so the root bone is still rotated 45 degrees. Even if the first animation ended with the root bone rotation at zero, the same situation could occur if the first animation ended prematurely because another animation was played.
+
+One solution to this is to key every value at frame 0 for every animation. This is tedious for the animator. It is also inefficient at runtime because every value will get set every time the animation is applied (usually 60 times per second). Each value that is keyed has a small cost which is usually negligible (attachment keys slightly more than others). When all values are keyed the costs add up and may be an issue if there are many skeletons being animated on-screen at once.
+
+It is most efficient to have the programmer reset the skeleton's bones to the setup pose before applying an animation. For attachments, the programmer could reset some or all of the slots to the setup pose when an animation changes.
+
+Explore keying
+
+Now is a great time to explore firsthand how keying works in Spine. If you haven't yet set up your own skeleton, you can open one of the example projects that come with Spine and create a new animation by clicking the Animation node in the tree, then New Animation. In animate mode, pose the skeleton at frame 0 and set keys (for example, by pressing K). Next, click frame 30, pose the skeleton differently, and set keys. Scrub the timeline by dragging or click play to see your animation in action.
