@@ -6,7 +6,7 @@
 * <a href="./20_basic_concepts/">기본 컨셉</a>
 	* <a href="./21_images/">이미지(Images)</a>
 	* <a href="./22_tools/">툴(Tools)</a>
-	* 키 프레임(Key Frames)
+	* <a href="./23_key_frames/">키 프레임(Key Frames)</a>
 	* 애니메이팅(Animating)
 * 어태치먼트(Attachments)
 	* 리전(Regions)
