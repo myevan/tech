@@ -1,0 +1,51 @@
+Animating
+
+Animating is an iterative process. The dopesheet is used extensively while animating to visualize keys and adjust their timing. It is recommended to learn about how the dopesheet works before applying the techniques below.
+
+Becoming a great animator is a complex subject and deserves much more space than can be given here. It is highly suggested to read The Animator's Survival Kit by Richard Williams. For a quicker and more brief overview, see the 12 basic principles of animation.
+
+Workflow
+
+There are many possible workflows for designing animations with Spine. Below are some of the most common approaches. Each individual animator needs to decide which combination of techniques work best for them and for a particular animation task.
+
+Straight ahead
+In this approach each frame is posed sequentially from the start to the end of the animation. This is straightforward and easy to understand so it is often how beginners intuitively approach animating.
+
+Straight ahead has the benefit that the action flows naturally because the poses from frame to frame are similar. The drawbacks are that it is easy to lose focus of the animation's goals and that it takes longer to produce results than other approaches.
+
+The straight ahead workflow can be very creative. It often works best when something is moving along a path rather than for posing.
+
+Pose to pose
+Pose to pose, also called "blocking", is traditionally the preferred method of beginning a new animation. It is done by first identifying the most important major poses of the animation without considering timing. Once these poses are finalized, the timing of the major poses can be adjusted and the movements between them filled in.
+
+This approach focuses on the most important aspects of the animation first. The major poses show off the entire range of movement with a minimal amount of work and changes to the animation at this point are relatively inexpensive. The drawback is that such a logical approach can hinder the flow of the animation, causing it to appear choppy or unnatural.
+
+Pose to pose involves planning the animation in advance, which saves time and directs focus to the most important poses. It often works best when combined with other workflows.
+
+The easiest way to design a new animation in Spine using pose to pose is to create your first major pose on frame 0, the next major pose on frame 1, etc. Once the poses are finalized, the keys can be dragged to adjust the timing and keys added between them to fill in and polish the movements.
+
+To use pose to pose on an existing animation, Stepped can be enabled on the playback view. This disables tweening for all keys, meaning that only the key poses will be seen.
+
+Layered
+The layered approach means to only work on a few specific parts at time, hiding the rest. Multiple passes are done over the animation until all the parts have been animated.
+
+For example, it can be useful to hide most of the attachments for a skeleton and focus on just the body and limbs during the first pass. For some animations, it can help to hide a skeleton's arms and legs and only animate the hips and torso, then go over the animation again to animate the legs, and again to animate the arms.
+
+Layered removes distractions and allows the animator to focus on the most important parts of the skeleton, which will then dictate how the rest of the parts are animated. The drawbacks are that it requires a deep understanding of body mechanics, does not have the flexibility of pose to pose for making early changes to the animation, and can result in disconnected movement between the parts that were animated separately.
+
+Layered works well for animations where most of the movement is defined by a subset of the skeleton's parts.
+
+Combined
+It is often useful to combine the techniques. For example, first create major poses only for movements that must be in the animation (pose to pose), then go over the animation from start to finish (straight ahead) multiple times and animate only a subset of parts each time (layered). A combined approach can provide a balance of logical planning and creativity.
+
+Secondary motion
+
+Secondary motion, also called counteraction, is motion generated as a reaction to the primary motion of the skeleton. Secondary motion amplifies the primary motion and makes the entire animation feel more natural.
+
+Often the secondary motion is slightly delayed from the primary motion or even moves in the opposite direction. For example, hair or items such as a scabbard or cape typically move or bounce as a result of the character moving. If these items move in the same direction as the primary motion, the animation will feel robotic and unrealistic.
+
+Secondary motion is often done as the final polish for an animation. If done to soon, it can make editing the major poses of the animation difficult. Straight ahead is often a good approach to adding secondary motion.
+
+Curves
+
+Curves allow the animator to adjust the speed of a transition between keys. When all the parts of a skeleton are moving at a constant speed, the movement tends to be robotic and lifeless. See the graph view for more information.

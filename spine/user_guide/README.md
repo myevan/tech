@@ -7,7 +7,7 @@
 	* <a href="./21_images/">이미지(Images)</a>
 	* <a href="./22_tools/">툴(Tools)</a>
 	* <a href="./23_key_frames/">키 프레임(Key Frames)</a>
-	* 애니메이팅(Animating)
+	* <a href="./24_animating/>애니메이팅(Animating)</a>
 * 어태치먼트(Attachments)
 	* 리전(Regions)
 	* 메쉬(Meshes)
