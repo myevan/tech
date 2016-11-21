@@ -7,4 +7,4 @@
 * <a href="./spine/change_log">스파인 변경 사항</a>
 * <a href="./android/command_line">안드로이드 커맨드라인 사용법</a>
 * <a href="./osx/automator">OS X 오토메이터</a>
-* <a href="./omnisharp_sublime_unity">옵니샵 서브라임 유니티 사용법</a>
+* <a href="./omnisharp_sublime_unity">옴니샵 서브라임 유니티 사용법</a>
