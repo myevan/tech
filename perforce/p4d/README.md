@@ -3,6 +3,21 @@ Perforce Daemon
 
 퍼포스 서버 데몬
 
+윈도우
+------
+
+#### 직접 실행 
+
+data 디렉토리 생성 후 유니코드 모드 서버 실행 배치 파일
+
+	IF NOT EXIST %~dp0data GOTO INIT
+	GOTO START
+	:INIT
+	mkdir %~dp0data
+	%~dp0p4d.exe -r %~dp0data -L %~dp0log -J %~dp0journal -p 1666 -xi
+	:START
+	%~dp0p4d.exe -r %~dp0data -L %~dp0log -J %~dp0journal -p 1666 
+
 
 시놀로지
 --------
