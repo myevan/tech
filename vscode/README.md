@@ -14,3 +14,7 @@
 * 탭 리스트 Ctrl + Tab
 * 탭 좌 이동 Ctrl + Page Up
 * 탭 우 이동 Ctrl + Page Down
+
+### 마크다운
+
+* 미리보기 Ctrl + Shift + V 
