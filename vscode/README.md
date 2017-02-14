@@ -10,7 +10,7 @@
 ### 탭
 
 * 탭 나누기 Ctrl + \
-* 탭 닫기 Ctrl + W
+* 탭 닫기 Ctrl + F4
 * 탭 리스트 Ctrl + Tab
 * 탭 좌 이동 Ctrl + Page Up
 * 탭 우 이동 Ctrl + Page Down
