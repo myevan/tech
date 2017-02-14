@@ -17,4 +17,5 @@
 
 ### 마크다운
 
-* 미리보기 Ctrl + Shift + V 
+* 미리보기 탭 열기 Ctrl + Shift + V
+* 미리보기 옆 열기 Ctrl + K, V (vim 플러그인과 충돌)
