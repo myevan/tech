@@ -1,6 +1,6 @@
 # 언리얼 엔진
 
-## 셋업
+## 빌드
 
 ### iPhonePackager Resources.resx 에러
 
