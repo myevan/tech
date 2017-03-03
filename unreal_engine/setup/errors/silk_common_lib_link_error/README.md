@@ -2,7 +2,7 @@
 
 ## 셋업
 
-### Win64 전용 셋업 빌드 시 silk_common.lib 링크 에러
+### silk_common.lib 링크 에러
 
 #### 재현 환경
 
@@ -11,7 +11,7 @@
 
 #### 재현 방법
     
-    > Setup.bat -exclude=Linux -exclude=Mac -exclude=IOS -exclude=Android -exclude=HTML5 -exclude=Win32 
+    > Setup.bat -exclude=Win32 
 
 #### 문제 상황
 
@@ -19,7 +19,11 @@
 
 #### 문제 원인
 
-\Engine\Source\ThirdParty\libOpus\libOpus.build.cs
+`\Engine\Source\ThirdParty\libOpus\opus-1.1\win32` 폴더 내 라이브러리가 존재하지 않음
+
+### 문제 분석
+
+`\Engine\Source\ThirdParty\libOpus\libOpus.build.cs`
 
     if ((Target.Platform == UnrealTargetPlatform.Win64) ||
         (Target.Platform == UnrealTargetPlatform.Win32))
@@ -39,4 +43,4 @@
 
 #### 문제 해결
 
-Win32 제외하지 않거나 라이브러리 직접 복사
+Win32 제외 옵션을 사용하지 않음
