@@ -1,13 +1,24 @@
-# 비주얼 스튜디오
+# 비주얼 스튜디오 이슈
 
-## 이슈
+## 팀 서비스 계정에 연결할 수 없음
 
-### 팀 서비스 계정에 연결할 수 없음
+### 환경
+
+* IDE: VisualStudio Community 2015 14.0.25431.01 Update 3
+
+### 재현
+
+비주얼 스튜디오 실행 후 로그 확인
+
+### 상황
 
 비주얼 스튜디오 시작시 에러 표시됨
 
     We were unable to automatically populate your Visual Studio Online accounts.
     F400813: Resource not available for anonymous access. Client authentication required.
+
+
+### 해결
     
 <https://connect.microsoft.com/VisualStudio/feedback/details/2199711/we-were-unable-to-automatically-populate-your-visual-studio-online-accounts>
 
