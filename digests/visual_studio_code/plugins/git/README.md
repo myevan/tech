@@ -1,14 +1,10 @@
-# VScode
+# 비주얼 스튜디오 코드 플러그인: git
 
-## Plugins
-
-### git
-
-#### 용어
+## 용어
 
 * 단계: stage
 * 정리: revert
 
-#### 단축키
+## 단축키
 
 * 커밋: ctrl + enter
