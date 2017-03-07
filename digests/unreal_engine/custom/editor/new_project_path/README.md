@@ -6,7 +6,7 @@
 
 #### 목적
 
-새로운 프로젝트 기본 생성 경로를  `C:\Users\계정\Docuemtns\Unreal Projects` 대신 `C:\UnrealProjects` 로 변경
+새로운 프로젝트 기본 생성 경로를  `%USERPROFILE%\Documents\Unreal Projects` 대신 `C:\UnrealProjects` 로 변경
 
 #### 분석
 
